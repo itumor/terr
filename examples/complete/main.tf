@@ -33,14 +33,16 @@ module "subnets" {
 }
 
 module "ec2_instance" {
-  source                      = "../../"
-  namespace                   = var.namespace
-  stage                       = var.stage
-  name                        = var.name
-  ssh_key_pair                = module.aws_key_pair.key_name
-  vpc_id                      = module.vpc.vpc_id
-  subnet                      = module.subnets.private_subnet_ids[0]
-  security_groups             = [module.vpc.vpc_default_security_group_id]
+  source       = "../../"
+  namespace    = var.namespace
+  stage        = var.stage
+  name         = var.name
+  ssh_key_pair = module.aws_key_pair.key_name
+  vpc_id       = module.vpc.vpc_id
+  subnet       = module.subnets.private_subnet_ids[0]
+  security_groups = [
+    module.vpc.vpc_default_security_group_id,
+  ]
   assign_eip_address          = var.assign_eip_address
   associate_public_ip_address = var.associate_public_ip_address
   instance_type               = var.instance_type

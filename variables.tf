@@ -177,7 +177,33 @@ variable "root_iops" {
 variable "ebs_device_name" {
   type        = list(string)
   description = "Name of the EBS device to mount"
-  default     = ["/dev/xvdb", "/dev/xvdc", "/dev/xvdd", "/dev/xvde", "/dev/xvdf", "/dev/xvdg", "/dev/xvdh", "/dev/xvdi", "/dev/xvdj", "/dev/xvdk", "/dev/xvdl", "/dev/xvdm", "/dev/xvdn", "/dev/xvdo", "/dev/xvdp", "/dev/xvdq", "/dev/xvdr", "/dev/xvds", "/dev/xvdt", "/dev/xvdu", "/dev/xvdv", "/dev/xvdw", "/dev/xvdx", "/dev/xvdy", "/dev/xvdz"]
+  default = [
+    "/dev/xvdb",
+    "/dev/xvdc",
+    "/dev/xvdd",
+    "/dev/xvde",
+    "/dev/xvdf",
+    "/dev/xvdg",
+    "/dev/xvdh",
+    "/dev/xvdi",
+    "/dev/xvdj",
+    "/dev/xvdk",
+    "/dev/xvdl",
+    "/dev/xvdm",
+    "/dev/xvdn",
+    "/dev/xvdo",
+    "/dev/xvdp",
+    "/dev/xvdq",
+    "/dev/xvdr",
+    "/dev/xvds",
+    "/dev/xvdt",
+    "/dev/xvdu",
+    "/dev/xvdv",
+    "/dev/xvdw",
+    "/dev/xvdx",
+    "/dev/xvdy",
+    "/dev/xvdz",
+  ]
 }
 
 variable "ebs_volume_type" {
@@ -293,3 +319,5 @@ variable "instance_profile" {
   description = "A pre-defined profile to attach to the instance (default is to build our own)"
   default     = ""
 }
+
+variable "" {}
